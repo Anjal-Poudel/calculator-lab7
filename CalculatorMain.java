@@ -1,3 +1,9 @@
+// Name: Anjal Poudel
+// PRN: 23070126171
+// Batch: 2023-27
+// Branch: AIML(A3)
+
+
 import java.util.Scanner;
 
  public class CalculatorMain {
