@@ -37,4 +37,16 @@ import java.util.Scanner;
          scanner.close();
     }
 
+    private static void displayMenu() {
+        System.out.println("\n=== Calculator Menu ===");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+        System.out.println("5. Square");
+        System.out.println("6. Cube");
+        System.out.println("7. Square Root");
+        System.out.println("8. Exit");
+    }
+
 }
