@@ -68,6 +68,24 @@ import java.util.Scanner;
          } catch (ArithmeticException e) {
              System.out.println("Error: " + e.getMessage());
          }
-     }
+    }
+
+    private static void performUnaryOperation(Scanner scanner, CalculatorOperations calc, String operation, String method)
+             throws InvalidInputException {
+         try {
+             System.out.print("Enter a number: ");
+             double num = Double.parseDouble(scanner.nextLine());
+ 
+             double result = switch (method) {
+                 case "square" -> calc.square(num);
+                 case "cube" -> calc.cube(num);
+                 case "squareRoot" -> calc.squareRoot(num);
+                 default -> throw new InvalidInputException("Invalid operation.");
+             };
+             System.out.printf("%s Result: %.2f%n", operation, result);
+         } catch (ArithmeticException e) {
+             System.out.println("Error: " + e.getMessage());
+         }
+    }
 
 }
