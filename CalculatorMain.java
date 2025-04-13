@@ -49,4 +49,25 @@ import java.util.Scanner;
         System.out.println("8. Exit");
     }
 
+    private static void performBinaryOperation(Scanner scanner, CalculatorOperations calc, String operation, String method)
+             throws InvalidInputException {
+         try {
+             System.out.print("Enter first number: ");
+             double num1 = Double.parseDouble(scanner.nextLine());
+             System.out.print("Enter second number: ");
+             double num2 = Double.parseDouble(scanner.nextLine());
+ 
+             double result = switch (method) {
+                 case "add" -> calc.add(num1, num2);
+                 case "subtract" -> calc.subtract(num1, num2);
+                 case "multiply" -> calc.multiply(num1, num2);
+                 case "divide" -> calc.divide(num1, num2);
+                 default -> throw new InvalidInputException("Invalid operation.");
+             };
+             System.out.printf("%s Result: %.2f%n", operation, result);
+         } catch (ArithmeticException e) {
+             System.out.println("Error: " + e.getMessage());
+         }
+     }
+
 }
